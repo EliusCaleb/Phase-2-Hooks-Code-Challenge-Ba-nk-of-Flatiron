@@ -1,10 +1,14 @@
 import React,{useState} from "react";
 
-function AddTransactionForm(onSubmiting) {
-  const [date, setDate] = useState('');
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [amount, setAmount] = useState(0);
+function AddTransactionForm(onSubmission) {
+  const [formData,setFormData] =  useState({
+          date :'',
+          description : '',
+          category : '',
+          amount : ' '
+
+
+  })
  
  
   function handleDate(e){
@@ -31,24 +35,28 @@ function AddTransactionForm(onSubmiting) {
        category: category,
        amount: amount,
       };
-     onSubmiting(formData)
+     onSubmission(formData)
     }
+     
 
+    function handleChange(e){
+      setFormData({...formData, [e.target.name]: e.target.value})
+    }
    
      
     
  
   return (
-    <div className="ui segment"  onSubmit={handleSubmit}>
-      <form className="ui form">
+    <div className="ui segment"  >
+      <form className="ui form"  onChange={handleChange}  onSubmit={handleSubmit}    >
         <div className="inline fields">
-          <input type="date" name="date" onChange={handleDate} value={date}/>
+          <input type="date" name="date" onChange={handleDate} value={form.date}/>
  
-          <input type="text" name="description" placeholder="Description" onChange={handleDescription} value={description}    />
+          <input type="text" name="description" placeholder="Description" onChange={handleDescription} value={form.description}    />
  
-          <input type="text" name="category" placeholder="Category" onChange={handleCategory} value={category}/>
+          <input type="text" name="category" placeholder="Category" onChange={handleCategory} value={form.category}/>
  
-          <input type="number" name="amount" placeholder="Amount" step="0.01" onChange={handleAmount} value={amount}/>
+          <input type="number" name="amount" placeholder="Amount" step="0.01" onChange={handleAmount} value={form.amount}/>
  
         </div>
         <button className="ui button" type="submit">
