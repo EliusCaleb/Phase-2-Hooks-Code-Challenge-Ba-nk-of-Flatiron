@@ -1,7 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
-
-function TransactionsList() {
+// item represent single transaction in the array of fetch 
+function TransactionsList({transactions}) {
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -19,7 +19,19 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render a list of <Transaction> components here */}
+        
+        { 
+            transactions.map(item =>{
+              return <Transaction 
+                        date={item.date}  
+                         description={item.description} 
+                         amount={item.amount} 
+                        category={item.category} 
+                        key={item.id}
+                       />
+            })
+         
+        }
       </tbody>
     </table>
   );
