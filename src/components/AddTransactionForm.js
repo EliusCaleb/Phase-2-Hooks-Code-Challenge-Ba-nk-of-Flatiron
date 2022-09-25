@@ -6,27 +6,9 @@ function AddTransactionForm(onSubmission) {
           description : '',
           category : '',
           amount : ' '
-
-
   })
  
- 
-  function handleDate(e){
-    setDate(e.target.value);
-  }
- 
-  function handleDescription(e){
-    setDescription(e.target.value);
-  }
- 
-  function handleCategory(e){
-    setCategory(e.target.value);
-  }
- 
-  function handleAmount(e){
-    setAmount(e.target.value);
-  }
- 
+
   function handleSubmit(event) {
       event.preventDefault();
        const formData = {
@@ -48,15 +30,15 @@ function AddTransactionForm(onSubmission) {
  
   return (
     <div className="ui segment"  >
-      <form className="ui form"  onChange={handleChange}  onSubmit={handleSubmit}    >
+      <form className="ui form"  onChange={handleChange}  onSubmission={handleSubmit}    >
         <div className="inline fields">
-          <input type="date" name="date" onChange={handleDate} value={form.date}/>
+          <input type="date" name="date"  value={formData.date}/>
  
-          <input type="text" name="description" placeholder="Description" onChange={handleDescription} value={form.description}    />
+          <input type="text" name="description" placeholder="Description" value={formData.description}    />
  
-          <input type="text" name="category" placeholder="Category" onChange={handleCategory} value={form.category}/>
+          <input type="text" name="category" placeholder="Category"  value={formData.category}/>
  
-          <input type="number" name="amount" placeholder="Amount" step="0.01" onChange={handleAmount} value={form.amount}/>
+          <input type="number" name="amount" placeholder="Amount" step="0.01" value={formData.amount}/>
  
         </div>
         <button className="ui button" type="submit">

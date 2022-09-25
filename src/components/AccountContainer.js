@@ -13,10 +13,17 @@ function AccountContainer() {
       });
   }, []);
   console.log(transactions)
+
+
+  function handleUpdatedOnSubmission(newTransaction){
+
+    console.log(newTransaction);
+
+  }
   return (
     <div>
       <Search />
-      <AddTransactionForm />
+      <AddTransactionForm onSubmission={handleUpdatedOnSubmission} />
       <TransactionsList transactions={transactions}/>
     </div>
   );
