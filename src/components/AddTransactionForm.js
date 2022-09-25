@@ -1,36 +1,32 @@
-import React,{useState} from "react";
+import React,{ useState } from "react";
 
-function AddTransactionForm(onSubmission) {
+function AddTransactionForm({onSubmission}) {
   const [formData,setFormData] =  useState({
           date :'',
           description : '',
           category : '',
-          amount : ' '
-  })
+          amount : 0
+  });
  
-
+  function handleChange(e){
+    setFormData({...formData, 
+      [e.target.name]: e.target.value,
+    });
+  }
   function handleSubmit(event) {
       event.preventDefault();
-       const formData = {
-       date:date,
-       description: description,
-       category: category,
-       amount: amount,
-      };
      onSubmission(formData)
     }
      
 
-    function handleChange(e){
-      setFormData({...formData, [e.target.name]: e.target.value})
-    }
+    
    
      
     
  
   return (
     <div className="ui segment"  >
-      <form className="ui form"  onChange={handleChange}  onSubmission={handleSubmit}    >
+      <form className="ui form"  onChange={handleChange}  onSubmit={handleSubmit}    >
         <div className="inline fields">
           <input type="date" name="date"  value={formData.date}/>
  
