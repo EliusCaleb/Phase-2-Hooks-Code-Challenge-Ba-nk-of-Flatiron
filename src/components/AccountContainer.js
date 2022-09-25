@@ -16,13 +16,31 @@ function AccountContainer() {
 
 
   function handleUpdatedOnSubmission(newTransaction){
+    
+    setTransactions(transactions =>[...transactions,newTransaction ])
 
-    console.log(newTransaction);
 
+    const configurationData =  {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTransaction),
+    }
+    fetch("http://localhost:8001/transactions",configurationData)
+     .then((response)=>response.json())
+       .then(newItem=>setTransactions(transactions=>[...transactions,newItem]))
+       .catch((error)=>{console.log(error)})
   }
+  function handleSearch(search){
+    console.log(search)
+    const filterSearch = transactions.filter((transaction)=>{return transaction.description.toLowerCase().includes(search.toLowerCase()) })
+    setTransactions(filterSearch)
+    console.log(transactions)
+}
   return (
     <div>
-      <Search />
+      <Search onSearch={handleSearch}/>
       <AddTransactionForm onSubmission={handleUpdatedOnSubmission} />
       <TransactionsList transactions={transactions}/>
     </div>

@@ -83,6 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2022-09-18",
+      "description": "Maize plantation",
+      "category": "Farming",
+      "amount": "200000",
+      "id": 13
+    },
+    {
+      "date": "2022-09-25",
+      "description": "Series",
+      "category": "Theater",
+      "amount": "500",
+      "id": 14
+    },
+    {
+      "date": "2022-09-25",
+      "description": "Networking",
+      "category": "Business",
+      "amount": "30000",
+      "id": 15
+    },
+    {
+      "date": "2022-09-25",
+      "description": "Travelling",
+      "category": "Leisure",
+      "amount": "10000",
+      "id": 16
     }
   ]
 }
