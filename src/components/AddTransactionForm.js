@@ -7,7 +7,7 @@ function AddTransactionForm({onSubmission}) {
           category : '',
           amount : 0
   });
- 
+   
   function handleChange(e){
     setFormData({...formData, 
       [e.target.name]: e.target.value,
@@ -15,14 +15,11 @@ function AddTransactionForm({onSubmission}) {
   }
   function handleSubmit(event) {
       event.preventDefault();
+     
      onSubmission(formData)
-    }
-     
-
-    
-   
-     
-    
+     event.target.reset();
+  }
+  
  
   return (
     <div className="ui segment"  >
@@ -47,3 +44,4 @@ function AddTransactionForm({onSubmission}) {
  
 }
 export default AddTransactionForm;
+

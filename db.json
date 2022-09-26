@@ -85,46 +85,39 @@
       "amount": -975
     },
     {
-      "date": "2022-09-18",
-      "description": "Maize plantation",
-      "category": "Farming",
-      "amount": "200000",
-      "id": 13
-    },
-    {
-      "date": "2022-09-25",
-      "description": "Series",
-      "category": "Theater",
-      "amount": "500",
-      "id": 14
-    },
-    {
-      "date": "2022-09-25",
+      "date": "2022-09-30",
       "description": "Networking",
-      "category": "Business",
-      "amount": "30000",
-      "id": 15
-    },
-    {
-      "date": "2022-09-25",
-      "description": "Travelling",
       "category": "Leisure",
-      "amount": "10000",
-      "id": 16
+      "amount": "340000",
+      "id": 19
     },
     {
-      "date": "2022-09-27",
-      "description": "GameNight",
-      "category": "Service",
-      "amount": "20000",
-      "id": 17
+      "date": "2022-09-30",
+      "description": "Business",
+      "category": "Theater",
+      "amount": "300000",
+      "id": 22
     },
     {
-      "date": "2022-09-23",
-      "description": "Payment",
-      "category": "Labour",
-      "amount": "1000000",
-      "id": 18
+      "date": "2022-09-30",
+      "description": "Travelling",
+      "category": "Business",
+      "amount": "70000",
+      "id": 23
+    },
+    {
+      "date": "2022-09-30",
+      "description": "Travelling",
+      "category": "Business",
+      "amount": "70000",
+      "id": 24
+    },
+    {
+      "date": "2022-09-30",
+      "description": "Networking",
+      "category": "Theater",
+      "amount": "8000",
+      "id": 25
     }
   ]
 }

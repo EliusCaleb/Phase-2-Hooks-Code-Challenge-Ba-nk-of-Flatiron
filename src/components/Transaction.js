@@ -12,3 +12,5 @@ function Transaction({ date,description,category,amount}) {
 }
 
 export default Transaction;
+
+

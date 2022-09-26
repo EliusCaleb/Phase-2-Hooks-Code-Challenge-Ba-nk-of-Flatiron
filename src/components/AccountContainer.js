@@ -5,6 +5,8 @@ import AddTransactionForm from "./AddTransactionForm";
 
 function AccountContainer() {
   const [ transactions,  setTransactions] = useState([]);
+  const [search, setSearch] = useState('')
+
   useEffect(() => {
     fetch("http://localhost:8001/transactions")
       .then((response) => response.json())
@@ -12,13 +14,12 @@ function AccountContainer() {
         setTransactions(data);
       });
   }, []);
-  console.log(transactions)
+  //console.log(transactions)
 
 
   function handleUpdatedOnSubmission(newTransaction){
     
-    setTransactions(transactions =>[...transactions,newTransaction ])
-
+    //setTransactions(transactions =>[...transactions,newTransaction ])
 
     const configurationData =  {
       method: "POST",
@@ -33,19 +34,14 @@ function AccountContainer() {
        .catch((error)=>{console.log(error)})
   }
   
-  function handleSearch(search){
-    console.log(search)
-    const filterSearch = transactions.filter((transaction)=>{return transaction.description.toLowerCase().includes(search.toLowerCase()) })
-    setTransactions(filterSearch)
-    console.log(transactions)
-}
+
   return (
     <div>
-      <Search onSearch={handleSearch}/>
+      <Search onSearch={setSearch} search={search}/>
       <AddTransactionForm onSubmission={handleUpdatedOnSubmission} />
-      <TransactionsList transactions={transactions}/>
+      <TransactionsList transactions={transactions} search={search}/>
     </div>
   );
-}
+} 
 
 export default AccountContainer;

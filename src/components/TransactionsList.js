@@ -1,7 +1,10 @@
 import React from "react";
 import Transaction from "./Transaction";
 // item represent single transaction in the array of fetch 
-function TransactionsList({transactions}) {
+function TransactionsList({transactions,search}) {
+
+  const filterSearch = transactions.filter((transaction)=>{return transaction.description.toLowerCase().includes(search.toLowerCase()) })
+  
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -21,15 +24,15 @@ function TransactionsList({transactions}) {
         </tr>
         
         { 
-            transactions.map(item =>{
-              return <Transaction 
-                        date={item.date}  
-                         description={item.description} 
-                         amount={item.amount} 
-                        category={item.category} 
-                        key={item.id}
-                       />
-            })
+          filterSearch.map(item =>{
+            return <Transaction 
+                      date={item.date}  
+                       description={item.description} 
+                       amount={item.amount} 
+                      category={item.category} 
+                      key={item.id}
+                     />
+          }) 
          
         }
       </tbody>
