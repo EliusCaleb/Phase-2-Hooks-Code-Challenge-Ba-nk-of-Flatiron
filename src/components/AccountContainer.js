@@ -32,6 +32,7 @@ function AccountContainer() {
        .then(newItem=>setTransactions(transactions=>[...transactions,newItem]))
        .catch((error)=>{console.log(error)})
   }
+  
   function handleSearch(search){
     console.log(search)
     const filterSearch = transactions.filter((transaction)=>{return transaction.description.toLowerCase().includes(search.toLowerCase()) })

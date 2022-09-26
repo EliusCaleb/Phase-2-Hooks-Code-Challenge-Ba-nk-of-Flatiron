@@ -1,9 +1,9 @@
 import React,{ useState } from "react";
 
 function Search({onSearch}) {
-  const [search,setsearch] = useState(" ")
+  const [search,setSearch] = useState(" ")
   function handleChange(event){
-   setsearch(event.target.value)
+   setSearch(event.target.value)
     onSearch(search)
   }
  return (
