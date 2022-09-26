@@ -103,13 +103,6 @@
       "description": "Travelling",
       "category": "Business",
       "amount": "70000",
-      "id": 23
-    },
-    {
-      "date": "2022-09-30",
-      "description": "Travelling",
-      "category": "Business",
-      "amount": "70000",
       "id": 24
     },
     {
@@ -118,6 +111,13 @@
       "category": "Theater",
       "amount": "8000",
       "id": 25
+    },
+    {
+      "date": "2022-09-30",
+      "description": "Business",
+      "category": "Payment",
+      "amount": "60000",
+      "id": 26
     }
   ]
 }
